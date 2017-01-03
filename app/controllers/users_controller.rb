@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize, except: [:index]
+  # before_filter :authorize, except: [:index]
+  # before_filter :authorize, only: [:show]
 
   def index
 
   end
 
   def show
-    @user = User.find_by_id(parmas[:id])
+    @user = current_user
   end
 
   def new
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to user_path(user)
     else
       redirect_to '/signup'
     end
