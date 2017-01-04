@@ -12,15 +12,14 @@
                 <br>
                 <img src="<%= @city.image %>" alt="city image" height='200px' width='200px'>
                 <br><br><hr>
-
             </div>
             <div class="col-md-7">
                 <% @posts.each do |post| %>
                 <h2><%= link_to post.title, post_path(post) %></h2>
-
                 <p><%= post.body[0,500]+"..." %></p>
                 <% end %>
             </div>
+            <!-- <%= link_to 'New Post', '/cities/:id/posts/new' %> -->
         </div>
     </div>
 </div>
