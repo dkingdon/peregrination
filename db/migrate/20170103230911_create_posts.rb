@@ -3,7 +3,9 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :title
       t.text :body
-      t.timestamp :date_created
+
+      t.belongs_to :user
+      t.belongs_to :city
 
       t.timestamps
     end

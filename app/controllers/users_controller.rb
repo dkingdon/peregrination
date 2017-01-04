@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    user_id = current_user.id
+    @posts = Post.where(user_id: user_id).all
   end
 
   def new
