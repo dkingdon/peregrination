@@ -1,0 +1,12 @@
+
+<h1>User Profile Page Here</h1>
+
+<h2>Welcome <%= @user.name %> <%= @user.email %>!</h2>
+<img src="<%= @user.profile_image %>" alt="profile image" height='80px' width='80px'>
+<h3>Created at: <%= @time %> <%= @user.current_city %></h3>
+<% @posts.each do |post| %>
+<h3><%= link_to post.title, post_path(post) %></h3>
+
+<h3>Body: <%= post.body %></h3>
+<% end %>
+<%= link_to "Edit", edit_user_path(@user) %>
