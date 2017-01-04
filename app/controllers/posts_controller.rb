@@ -6,4 +6,8 @@ class PostsController < ApplicationController
     @author_id = @post.user_id
     @author = User.find_by_id(@author_id)
   end
+
+  def new
+    
+  end
 end

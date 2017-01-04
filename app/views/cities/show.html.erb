@@ -1,0 +1,29 @@
+<h1>Cities#show</h1>
+<p>Find me in app/views/cities/show.html.erb</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-5">
+                <h2>Welcome to
+                    <i><%= @city.name %>!</i>
+                </h2>
+                <br>
+                <img src="<%= @city.image %>" alt="city image" height='200px' width='200px'>
+                <br><br><hr>
+
+            </div>
+            <div class="col-md-7">
+                <% @posts.each do |post| %>
+                <h2><%= link_to post.title, post_path(post) %></h2>
+
+                <p><%= post.body[0,500]+"..." %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%= link_to "Back", '/' %>
