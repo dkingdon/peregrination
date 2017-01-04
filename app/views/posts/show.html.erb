@@ -1,5 +1,10 @@
-<h1>Single Post Show</h1>
-<h3>Author: <%= @author.name %></h3>
-<h3>Title: <%= @post.title %></h3>
-<h3>Body: <%= @post.body %></h3>
-<%= link_to "Back", user_path(@user) %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h2><%= @post.title %></h2>
+            <h4>&emsp;<i>by <%= @author.name %></i></h4>
+            <p><%= @post.body %></p>
+            <%= link_to "Back", user_path(@user) %>
+        </div>
+    </div>
+</div>
