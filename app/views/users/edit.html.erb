@@ -1,8 +1,28 @@
-<h1>edit form </h1>
-<%= form_for @user do |f| %>
 
-  Current City: <%= f.text_field :current_city %>
-  Profile Image: <%= f.text_field :profile_image %>
-  <%= f.submit "Submit" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+        <div class="text-center">
+          <h1>Edit Form</h1>
+        </div>
+      </div>
+      <%= form_for @user do |f| %>
+        <form>
+            <fieldset class="form-group">
+              <label for="current_city">Current City</label>
+              <%= f.text_field :current_city, class: "form-control", placeholder: "Current City" %>
+            </fieldset>
 
-<% end %>
+            <fieldset class="form-group">
+              <label for="profile_image">Profile Image URL</label>
+              <%= f.number_field :profile_image, class: "form-control", placeholder: "Profile Image URL" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= f.submit "Save", class: "btn btn-primary" %>
+            </fieldset>
+          </form>
+      <% end %>
+    </div>
+  </div>
+</div>
