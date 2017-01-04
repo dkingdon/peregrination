@@ -8,7 +8,10 @@ get '/signup', to: 'users#new'
 post '/users', to: 'users#create'
 
 get '/users/id', to: 'users#show', as: 'user'
+get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+patch '/users/:id', to: 'users#update'
 
+get '/posts/:id', to: 'posts#show', as: 'post'
 
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'

@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user = current_user
     user_id = current_user.id
     @posts = Post.where(user_id: user_id).all
+    @full_time = @user.created_at
+    @time = @full_time.to_s[0,10]
   end
 
   def new
@@ -25,6 +27,20 @@ class UsersController < ApplicationController
       redirect_to '/signup'
     end
   end
+
+  def edit
+    user_id = current_user.id
+    @user = User.find_by_id(user_id)
+  end
+
+  def update
+    user_id = current_user.id
+    @user = User.find_by_id(user_id)
+
+    @user.update_attributes(user_params)
+    redirect_to user_path(@user)
+  end
+
 
 private
 

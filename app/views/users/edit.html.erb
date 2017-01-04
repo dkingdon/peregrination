@@ -1,0 +1,8 @@
+<h1>edit form </h1>
+<%= form_for @user do |f| %>
+
+  Current City: <%= f.text_field :current_city %>
+  Profile Image: <%= f.text_field :profile_image %>
+  <%= f.submit "Submit" %>
+
+<% end %>
