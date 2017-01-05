@@ -8,10 +8,9 @@
         </div>
       </div>
       <%= form_tag '/login' do %>
-        <form>
           <fieldset class="form-group">
             <label for="email">Email</label>
-            <%= text_field_tag :email, class: "form-control" %>
+            <%= text_field_tag :email%>
           </fieldset>
           <fieldset class="form-group">
             <label for="password">Password</label>
@@ -20,7 +19,6 @@
           <fieldset class="form-group">
             <%= submit_tag "Submit", class: "btn btn-primary" %>
           </fieldset>
-        </form>
       <% end %>
     </div>
   </div>
