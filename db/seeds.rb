@@ -5,4 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Post.create({title: "SF city", body: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
+
+City.create({name: "San Francisco", image: "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/08/SANFRANCISCO-1200x618.jpg"})
+City.create({name: "London", image: "http://www.universal-tourguide.com/wp-content/uploads/2016/09/discoverlondon.jpg"})
+City.create({name: "Gibraltar", image: "https://image.jimcdn.com/app/cms/image/transf/none/path/sf778462bcdf82c75/image/i8791725d74c556bc/version/1452438276/image.jpg"})
