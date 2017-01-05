@@ -8,7 +8,7 @@
         </div>
         <br>
       </div>
-      <%= form_for :post, method: :patch do |f| %>
+      <%= form_for :post do |f| %>
           <fieldset class="form-group">
             <label for="name">Title</label>
             <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
