@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # before_filter :authorize, only: [:show]
 
   def index
-
+    @cities = City.all
   end
 
   def show
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:name, :current_city, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :current_city, :email, :profile_image, :password, :password_confirmation)
   end
 
 end
