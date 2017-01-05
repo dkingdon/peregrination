@@ -1,8 +1,12 @@
 <div class="jumbotron">
   <div class="container">
     <h1>Peregrination</h1>
+
+    <%= video_tag "city.mp4", size: "320x240", autobuffer: true, controls: true %>
   </div>
 </div>
+
+
 
 <% @cities.each do |city| %>
 <h2><%= link_to city.name, city_path(city) %></h2>
