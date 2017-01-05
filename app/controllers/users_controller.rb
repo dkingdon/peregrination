@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    user_id = current_user.id
+    @user = User.find(params[:id])||current_user
+    user_id = @user.id
     @posts = Post.where(user_id: user_id).order('created_at DESC').all
     @full_time = @user.created_at
     @time = @full_time.to_s[0,10]
