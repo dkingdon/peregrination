@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # resources :cities do
-  #     resources :posts
-  # end
+
 
 
 
@@ -22,10 +20,20 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get  '/logout', to: 'sessions#destroy'
 
-  get '/cities/:id', to:'cities#show', as: 'city'
+  post "/cities/:id/posts/new", to: "posts#create"
 
-  get '/cities/:id/posts/new', to: 'posts#new', as: 'new_post'
-  post '/cities/:id/posts', to: 'posts#create'
+  resources :cities do
+      resources :posts
+  end
+
+  resources :users do
+    resources :posts
+  end
+
+  # get '/cities/:city_id', to:'cities#show', as: 'city'
+  #
+  # get '/cities/:city_id/posts/new', to: 'posts#new', as: 'new_post'
+  # post '/cities/:city_id/posts', to: 'posts#show'
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

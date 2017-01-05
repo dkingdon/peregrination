@@ -9,7 +9,6 @@
         </div>
       </div>
       <%= form_for :post do |f| %>
-        <form>
           <fieldset class="form-group">
             <label for="name">Title</label>
             <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
@@ -19,9 +18,16 @@
             <%= f.text_field :body, class: "form-control", placeholder: "Message" %>
           </fieldset>
           <fieldset class="form-group">
+            <label for="name">City ID</label>
+            <%= f.text_field :city_id, class: "form-control", placeholder: "Title" %>
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="email">User ID</label>
+            <%= f.text_field :user_id, class: "form-control", placeholder: "Message" %>
+          </fieldset>
+          <fieldset class="form-group">
             <%= f.submit "Submit", class: "btn btn-primary" %>
           </fieldset>
-        </form>
       <% end %>
     </div>
   </div>

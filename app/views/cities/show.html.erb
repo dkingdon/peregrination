@@ -19,7 +19,7 @@
                 <p><%= post.body[0,500]+"..." %></p>
                 <% end %>
             </div>
-            <!-- <%= link_to 'New Post', '/cities/:id/posts/new' %> -->
+            <%= link_to 'New Post', new_city_post_path(@city, @post), method: 'get' %>
         </div>
     </div>
 </div>
