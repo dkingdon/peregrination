@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # before_filter :authorize, only: [:show]
 
   def index
-
+    @cities = City.all
   end
 
   def show

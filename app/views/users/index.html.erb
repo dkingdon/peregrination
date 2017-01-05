@@ -3,3 +3,8 @@
     <h1>Peregrination</h1>
   </div>
 </div>
+
+<% @cities.each do |city| %>
+<h2><%= link_to city.name, city_path(city) %></h2>
+
+<% end %>

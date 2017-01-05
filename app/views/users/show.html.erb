@@ -19,11 +19,12 @@
                 <h5>Joined on
                     <%= @time %></h5>
                 <%= link_to "Edit", edit_user_path(@user) %>
+                <br>
+                <%= link_to "Home", users_path %>
             </div>
             <div class="col-md-7">
                 <% @posts.each do |post| %>
                 <h2><%= link_to post.title, post_path(post) %></h2>
-
                 <p><%= post.body[0,500]+"..." %></p>
                 <% end %>
             </div>

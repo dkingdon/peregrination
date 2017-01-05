@@ -15,7 +15,11 @@
  *= require_self
  */
 
+ .jumbotron {
+   text-align: center;
+ }
 
+<<<<<<< HEAD
  @font-face {
  font-family: 'Glyphicons Halflings';
  src: url('/assets/glyphicons-halflings-regular.eot');
@@ -38,3 +42,20 @@
   padding-right: 10px;
   background-color: #AAA;
 }
+=======
+ .head-nav {
+   text-align: right;
+   font-size: 25px;
+   padding-right: 10px;
+   background-color: #AAA;
+ }
+
+ @font-face {
+ font-family: 'Glyphicons Halflings';
+ src: url('/assets/glyphicons-halflings-regular.eot');
+ src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('/assets/glyphicons-halflings-regular.woff') format('woff'),
+    url('/assets/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  }
+>>>>>>> 442a0a9c6e6149f150d87b8d0dc46968414a38f4
