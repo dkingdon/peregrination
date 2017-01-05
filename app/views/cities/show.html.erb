@@ -19,7 +19,9 @@
                 <p><%= post.body[0,500]+"..." %></p>
                 <% end %>
             </div>
+            <% if current_user %>
             <%= link_to 'New Post', new_city_post_path(@city, @post), method: 'get' %>
+            <% end %>
         </div>
     </div>
 </div>

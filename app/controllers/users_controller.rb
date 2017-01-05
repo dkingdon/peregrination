@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     user_id = current_user.id
-    @posts = Post.where(user_id: user_id).all
+    @posts = Post.where(user_id: user_id).order('created_at DESC').all
     @full_time = @user.created_at
     @time = @full_time.to_s[0,10]
   end
