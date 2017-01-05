@@ -25,8 +25,8 @@
                 <h2><%= link_to post.title, post_path(post) %></h2>
 
                 <p><%= post.body[0,500]+"..." %></p>
-                <%=link_to "Edit Post", edit_user_post_path(user_id: post.user_id, id: post.id), method: :get%>
-                <%=link_to "Delete", user_post_path(user_id: post.user_id, id: post.id), method: :delete, data: {confirm: 'Are you sure?'}%>
+                <%=link_to "Edit Post", edit_user_post_path(user_id: post.user_id, id: post.id), method: :get, class: "btn btn-primary" %>
+                <%=link_to "Delete", user_post_path(user_id: post.user_id, id: post.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
 
                 <% end %>
             </div>
