@@ -23,7 +23,7 @@ module Peregrination
     # -- all .rb files in that directory are automatically loaded.
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-
+    
     config.assets.paths << "#{Rails}/app/assets/videos"
 
   end
