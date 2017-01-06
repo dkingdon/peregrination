@@ -1,38 +1,41 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-5">
-                <h2>Welcome Back
-                    <i><%= @user.name %>!</i>
-                </h2>
-                <br>
-                <img src="<%= @user.profile_image %>" alt="profile image" height='200px' width='200px'>
-                <br><br><hr>
-                <h4>
-                    <span class="glyphicon glyphicon-envelope"></span>
-                    <i><%= @user.email %></i>
-                </h4>
-                <h4>
-                    <span class="glyphicon glyphicon-map-marker"></span>
-                    <i><%= @user.current_city %></i>
-                </h4>
-                <h5>Joined on
-                    <%= @time %></h5>
-                <% if current_user == @user%>
-                    <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-                <%end%>
-            </div>
-            <div class="col-md-7">
-                <% @posts.each do |post| %>
-                <h2><%= link_to post.title, post_path(post) %></h2>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-5">
 
-                <p><%= post.body[0,500]+"..." %></p>
-                  <% if current_user == @user%>
-                    <%=link_to "Edit Post", edit_user_post_path(user_id: post.user_id, id: post.id), method: :get, class: "btn btn-primary" %>
-                    <%=link_to "Delete", user_post_path(user_id: post.user_id, id: post.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
-                  <%end%>
-                <% end %>
-            </div>
-        </div>
+        <% if current_user == @user %>
+        <h2>Welcome Back
+          <%= @user.name %>!</h2>
+        <% end %>
+
+        <br>
+        <img src="<%= @user.profile_image %>" alt="profile image" height='200px' width='200px'>
+        <br><br><hr>
+        <h4>
+          <span class="glyphicon glyphicon-envelope"></span>
+          <i><%= @user.email %></i>
+        </h4>
+        <h4>
+          <span class="glyphicon glyphicon-map-marker"></span>
+          <i><%= @user.current_city %></i>
+        </h4>
+        <h5>Joined on
+          <%= @time %></h5>
+        <% if current_user == @user%>
+        <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+        <%end%>
+      </div>
+      <div class="col-md-7">
+        <% @posts.each do |post| %>
+        <h2><%= link_to post.title, post_path(post) %></h2>
+
+        <p><%= post.body[0,500]+"..." %></p>
+        <% if current_user == @user%>
+        <%=link_to "Edit Post", edit_user_post_path(user_id: post.user_id, id: post.id), method: :get, class: "btn btn-primary" %>
+        <%=link_to "Delete", user_post_path(user_id: post.user_id, id: post.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
+        <%end%>
+        <% end %>
+      </div>
     </div>
+  </div>
 </div>
