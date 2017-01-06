@@ -11,6 +11,11 @@
         <br>
         <img src="<%= @user.profile_image %>" alt="profile image" height='200px' width='200px'>
         <br><br><hr>
+        <% if current_user != @user %>
+          <h3>
+            <%= @user.name %>
+          </h3>
+        <% end %>
         <h4>
           <span class="glyphicon glyphicon-envelope"></span>
           <i><%= @user.email %></i>
