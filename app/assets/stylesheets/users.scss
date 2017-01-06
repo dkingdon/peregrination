@@ -21,20 +21,18 @@ height: 200px;
 text-align: center;
 border: 2px solid white;
 border-radius: 15px;
-margin: 5px 5px;
+margin-left: 6%;
 }
 
-.col-md-10 {
- border: 2px solid white;
 
-}
 
 .col-md-3 a {
-  color: black !important;
+  color: white !important;
+  text-shadow: 1px 3px black;
 }
 
 
-#jumbo-vid {
+.jumbo-vid {
 position: absolute;
   top: 0;
   right: 0;
@@ -45,9 +43,13 @@ position: absolute;
   width:100%;
 }
 
+.head-nav a {
+  color: white !important;
+}
+
 .head-nav {
  text-align: right;
  font-size: 25px;
  padding-right: 10px;
- background-color: #AAA;
+ background-color: #000;
 }

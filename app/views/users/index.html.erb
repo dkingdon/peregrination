@@ -1,9 +1,7 @@
 <div id="home-page">
  <div class="jumbotron">
    <div class="container">
-     <video id="jumbo-vid" autoplay muted loop>
-       <source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/3267/6/166335919/529998454.mp4?token=586ec7ba_0x0dd72551f16c2f40d0c487eabdfab44da9c35114">
-     </video>
+       <%= video_tag "Bridge.mp4", autobuffer: true, loop: true, autoplay: true, class: "jumbo-vid" %>
        <div class="jumbo-content">
            <h1>
              Peregrination
