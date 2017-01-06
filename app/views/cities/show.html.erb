@@ -1,36 +1,40 @@
 <div class="container">
-  <br><br>
+    <br><br>
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-5">
-                <h2>Welcome to
+                <h1>Welcome to
                     <i><%= @city.name %>!</i>
-                </h2>
+                </h1>
                 <br>
                 <img src="<%= @city.image %>" alt="city image" height='400px' width='400px'>
-                <br><br><hr>
+                <br><hr>
                 <%= link_to "Back", '/', class: "btn btn-primary" %>
+
             </div>
             <div class="col-md-7">
+                <br><br>
+                <% if current_user %>
+                <%= link_to 'New Post', new_city_post_path(@city, @post), method: 'get', class: "btn btn-primary" %>
+                <% end %>
+                <br><br>
                 <% @posts.each do |post| %>
 
                 <div class="row posts">
-                <div class="col-md-2">
-                  <br>
-                  <img src="<%=User.find_by_id(post.user_id).profile_image %>" alt="image" height='55px' width='55px' style='border-radius:100px'>
+                    <div class="col-md-2">
+                        <br>
+                        <img src="<%=User.find_by_id(post.user_id).profile_image %>" alt="image" height='55px' width='55px' style='border-radius:100px'>
+                    </div>
+                    <div class="col-md-10">
+                        <h2><%= link_to post.title, post_path(post) %></h2>
+                        &emsp;&emsp;<i><%= post.created_at %></i>
+                        <p><%= post.body[0,500]+"..." %></p>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                  <h2><%= link_to post.title, post_path(post) %></h2>
-                  &emsp;&emsp;<i><%= post.created_at %></i>
-                  <p><%= post.body[0,500]+"..." %></p>
-                </div>
-              </div>
-              <br>
+                <br>
                 <% end %>
             </div>
-            <% if current_user %>
-            <%= link_to 'New Post', new_city_post_path(@city, @post), method: 'get', class: "btn btn-primary" %>
-            <% end %>
+
         </div>
     </div>
 </div>
