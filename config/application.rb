@@ -22,8 +22,13 @@ module Peregrination
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+<<<<<<< HEAD
     config.assets.paths << "#{Rails}/app/assets/fonts"
 
+=======
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    
+>>>>>>> 67750ec074581c0a26e683d97f922480708d4ec7
     config.assets.paths << "#{Rails}/app/assets/videos"
 
   end
