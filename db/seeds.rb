@@ -14,3 +14,4 @@ City.create({name: "London", image: "https://www.imperial.ac.uk/ImageCropToolT4/
 City.create({name: "Gibraltar", image: "https://image.jimcdn.com/app/cms/image/transf/none/path/sf778462bcdf82c75/image/i8791725d74c556bc/version/1452438276/image.jpg"})
 City.create({name: "San Juan", image: "https://media.timeout.com/images/102852687/image.jpg"})
 City.create({name: "Paris", image: "https://www.cpp.edu/~international/study-abroad/img/jXMx4mQz6MsnhP1FSKp2TJMt.jpeg"})
+
