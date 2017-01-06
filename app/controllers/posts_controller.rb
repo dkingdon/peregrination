@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by_id(params[:id])
     @post.update(post_params)
-    redirect_to user_path
+    redirect_to current_user
   end
 
   def destroy
