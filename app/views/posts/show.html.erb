@@ -4,9 +4,10 @@
           <h2><%= @post.title %></h2>
             <h4>&emsp;<i>by <%= link_to @author.name, user_path(@author.id) %></i></h4>
             <p><%= @post.body %></p>
-            <%= link_to "Back to Profile", user_path(current_user) %>
-            <br />
-            <%= link_to "Back to Home Page", '/' %>
+            <% if current_user%>
+            <%= link_to "Profile", user_path(current_user), class: "btn btn-primary" %>
+            <%end%>
+            <%= link_to "Home", '/', class: "btn btn-primary" %>
         </div>
     </div>
 </div>

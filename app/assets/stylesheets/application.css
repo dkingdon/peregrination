@@ -26,8 +26,19 @@
    background-color: #AAA;
  }
 
- .video {
-   border: 5px red;
+ #flash {
+   color: red;
+ }
+
+ .posts {
+   border: 1px solid lightgrey;
+   border-radius: 10px;
+   box-shadow: 1px 1px 1px #888888;
+ }
+
+
+ .image {
+   border-radius: 100%;
  }
 
  @font-face {

@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     if new_post.save
       redirect_to city_path
     else
-      flash[:error] = new_post.errors.full_messages.join(", ")
-      redirect_to new_city_post_path
+      flash[:error] = new_post.errors.full_messages[0] +"!"
+      redirect_to new_city_post_path(current_city)
     end
   end
 

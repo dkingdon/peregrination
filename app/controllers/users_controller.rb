@@ -20,11 +20,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    user.profile_image = "http://i.imgur.com/7Yc9GZf.png" if user.profile_image.empty?
     if user.save
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      flash[:error] = user.errors.full_messages.join(", ")
+      flash[:error] = "! Name/Email is invalid"
       redirect_to '/signup'
     end
   end
