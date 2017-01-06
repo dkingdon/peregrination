@@ -30,6 +30,7 @@
           </fieldset>
           <fieldset class="form-group">
             <%= f.submit "Submit", class: "btn btn-primary" %>
+            <%= link_to "Cancel", city_path(@city.id), class: "btn btn-primary" %>
           </fieldset>
       <% end %>
     </div>
