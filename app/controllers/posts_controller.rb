@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @city = City.find_by_id(params[:city_id])
-    @id = current_user.id
   end
 
   def create
@@ -21,7 +20,8 @@ class PostsController < ApplicationController
     if new_post.save
       redirect_to city_path
     else
-      redirect_to '/'
+      flash[:error] = new_post.errors.full_messages[0] +"!"
+      redirect_to new_city_post_path(current_city)
     end
   end
 

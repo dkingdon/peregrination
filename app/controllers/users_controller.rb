@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    user_id = current_user.id
+    @user = User.find(params[:id])||current_user
+    user_id = @user.id
     @posts = Post.where(user_id: user_id).order('created_at DESC').all
     @full_time = @user.created_at
     @time = @full_time.to_s[0,10]
@@ -20,10 +20,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    user.profile_image = "http://i.imgur.com/7Yc9GZf.png" if user.profile_image.empty?
     if user.save
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
+      flash[:error] = "! Name/Email is invalid"
       redirect_to '/signup'
     end
   end

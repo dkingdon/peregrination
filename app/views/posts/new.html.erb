@@ -4,7 +4,8 @@
       <div class="row">
         <br>
         <div class="text-center">
-          <h1>Create New Post</h1>
+          <h1>Create New</h1>
+
         </div>
         <br>
       </div>
@@ -16,12 +17,16 @@
           <fieldset class="form-group">
             <label for="email">Message</label>
             <%= f.text_area :body, class: "form-control", placeholder: "Message" %>
+            <!-- display flash messages  -->
+            <% flash.each do |name, msg| %>
+            <div id="flash"> &emsp; <i><%= msg %></i></div>
+            <% end %>
           </fieldset>
           <fieldset class="form-group">
             <%= f.hidden_field :city_id, class: "form-control", :value => @city.id %>
           </fieldset>
           <fieldset class="form-group">
-            <%= f.hidden_field :user_id, class: "form-control", :value => @id %>
+            <%= f.hidden_field :user_id, class: "form-control", :value => current_user.id %>
           </fieldset>
           <fieldset class="form-group">
             <%= f.submit "Submit", class: "btn btn-primary" %>

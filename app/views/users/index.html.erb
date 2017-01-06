@@ -1,10 +1,30 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Peregrination</h1>
-  </div>
+
+<div id="home-page">
+ <div class="jumbotron">
+   <div class="container">
+       <%= video_tag "Bridge.mp4", autobuffer: true, loop: true, autoplay: true, class: "jumbo-vid" %>
+       <div class="jumbo-content">
+           <h1>
+             Peregrination
+           </h1>
+     </div>
+   </div>
+ </div>
+
+
+ <div class="city-container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 text-center">
+         <div class="row">
+
+         <% @cities.each do |city| %>
+           <div class="col-md-3">
+           <h2><%= link_to city.name, city_path(city) %></h2>
+           </div>
+
+           <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
-
-<% @cities.each do |city| %>
-<h2><%= link_to city.name, city_path(city) %></h2>
-
-<% end %>

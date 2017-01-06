@@ -11,9 +11,9 @@
   <body>
 
   <div class="head-nav">
-
+    <%= link_to 'Home', '/' %> |
     <% if current_user %>
-     <%= link_to "#{current_user.name}", '/users/:id' %> | <%= link_to "Logout", '/logout' %>
+     <%= link_to "#{current_user.name}", user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
     <% else %>
      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
     <% end %>
